@@ -14,17 +14,17 @@ public class Video4243DiseñoHerenciaUsoEmpleadoIIIPolimorfismoEnlazadoDinámico
         misEmpleados[1]=new Empleados42("Patricio Gómez", 95000, 1995, 06, 02,"Atención al cliente");
         misEmpleados[2]=new Empleados42("Máría Martín", 105000, 2002, 03, 15,"Servicio Técnico");
         misEmpleados[3]=new Empleados42("Marcos Ortega");
-        misEmpleados[4]=jefe;
+        misEmpleados[4]=jefe; //Polimorfismo en acción. Principio de sustitución
         misEmpleados[5]=new Jefatura("María", 5500, 2011, 10, 27, "Ventas");
         
         misEmpleados[1].setSeccion("RRHH");
         for(Empleados42 e:misEmpleados){
               e.setSueldo(5);
           }          
-          for(Empleados42 e:misEmpleados){
-             System.out.println(e.getId()+" Nombre: "+e.getNombre()+e.getSeccion()+" Sueldo: "
-             +e.getSueldo()+" Fecha alta; "+e.getFechaContrato());
-          }
+        for(Empleados42 e:misEmpleados){
+           System.out.println(e.getId()+" Nombre: "+e.getNombre()+e.getSeccion()+" Sueldo: "
+           +e.getSueldo()+" Fecha alta; "+e.getFechaContrato());
+        }
         
 //        System.out.println(jefe.getId()+" Nombre: "+jefe.getNombre()+jefe.getSeccion()+" Suedo: "
 //        +jefe.getSueldo()+" Fecha alta "+ jefe.getFechaContrato());

@@ -35,9 +35,6 @@ class Empleado{
         altaContrato = calendario.getTime();
     }
     public Empleado(String nom){
-//        this.nombre=nom;
-//usamos this. para llamar al otro constructor que tenga la cantidad correspodite
-//de entradas
         this(nom,30000,2000,01,01);
     } 
     public String getNombre(){
