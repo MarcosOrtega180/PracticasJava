@@ -2,7 +2,7 @@
  * Este ejemplo hereda de la clase Video28Coche.java, la herencia en java
  * se hace mediante la palabra reservada extends.
  */
-package POO_28al41;
+package POO_28al46;
 public class Video40HerenciaFurgoneta extends Video28Coche {
     private int capacidad_carga;
     private int plazas_extra;

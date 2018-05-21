@@ -1,4 +1,4 @@
-package POO_28al41;
+package POO_28al46;
 public class Video363738ConstantesUsoFinalStaticMetodostatic {
     public static void main(String[] args) {
         Empleados trabajador1=new Empleados("Pablo");

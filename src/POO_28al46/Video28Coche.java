@@ -1,5 +1,5 @@
 
-package POO_28al41;
+package POO_28al46;
 
 public class Video28Coche {
     //estas son las propiedades encapsuladas
