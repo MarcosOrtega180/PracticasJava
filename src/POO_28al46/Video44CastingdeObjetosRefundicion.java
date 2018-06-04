@@ -16,7 +16,7 @@ public class Video44CastingdeObjetosRefundicion {
 
     
     public static void main(String[] args) {
-         Jefatura44 jefe = new Jefatura44("Carlos Pezzino", 1000, 10, 10, 10, "Jefatura44");
+        Jefatura44 jefe = new Jefatura44("Carlos Pezzino", 1000, 10, 10, 10, "Jefatura44");
         jefe.setIncentivo(1000);
         Empleados44[] misEmpleados=new Empleados44[6];
         misEmpleados[0]=new Empleados44("Paco Gómez", 85000, 1990, 12, 17,"Finanzas");

@@ -1,15 +1,21 @@
 package POO_28al46;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Video4546AbstractClass {
 
     public static void main(String[] args) {
-       Persona[] lasPersonas=new Persona[2];
+       Persona[] lasPersonas=new Persona[6];
        lasPersonas[0]=new Empleados45("Marcos", 50000, 2009, 10, 10, "Uno");
-       lasPersonas[1]=new Alumno("Pedro", "Ingeniería en Informática");
+       lasPersonas[1]=new Empleados45("Juan", 50000, 2009, 10, 10, "Tres");
+       lasPersonas[2]=new Empleados45("Pedro", 50000, 2009, 10, 10, "Dos");
+       lasPersonas[3]=new Empleados45("Arístides", 50000, 2009, 10, 10, "Cinco");
+       lasPersonas[4]=new Empleados45("Mendieta", 50000, 2009, 10, 10, "Diez");
+       lasPersonas[5]=new Alumno("Pedro", "Ingeniería en Informática");
        
+       Arrays.sort(lasPersonas);
        for(Persona persona:lasPersonas ){
            System.out.println(persona.getNombre()+" "+persona.getDescripcion());
        }
@@ -31,7 +37,7 @@ abstract class Persona{
     public abstract String getDescripcion();
 }
 
-class Empleados45 extends Persona{
+class Empleados45 extends Persona {
     
     public Empleados45(String nom,  double sue, int agno, int mes, int dia,String seccion){
        super(nom);
