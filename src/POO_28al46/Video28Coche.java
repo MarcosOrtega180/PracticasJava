@@ -67,7 +67,8 @@ public class Video28Coche {
         }
     }
     
-    //peso (metodo que es getter y setter a la vez
+    //peso (metodo que es getter y setter a la vez), porque establece un valor y lo modifica a lavez
+    //esta prácica no es recomendada
     public String setGetPeso(){
         int peso_carroceria=500;
         this.peso_total=this.peso_total+peso_carroceria;
@@ -81,6 +82,7 @@ public class Video28Coche {
     }
     
     //determinar precio final
+    //este también es un método seter y geter
     public int setGetPrecioCoche(){
         int precio_final=10000;
         if(this.asientosCuero==true){

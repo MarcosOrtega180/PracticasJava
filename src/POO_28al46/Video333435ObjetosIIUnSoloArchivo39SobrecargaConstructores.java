@@ -9,18 +9,19 @@ public class Video333435ObjetosIIUnSoloArchivo39SobrecargaConstructores {
     public static void main(String[] args) {
 
           Empleado[] misEmpleados=new Empleado[4];
+          
           misEmpleados[0]= new Empleado("Paco Gómez", 85000, 1990, 12, 17);
           misEmpleados[1]= new Empleado("Patricio Gómez", 95000, 1995, 06, 02);
           misEmpleados[2]= new Empleado("Máría Martín", 105000, 2002, 03, 15);
           misEmpleados[3]= new Empleado("Marcos Ortega");
-
           
-          for(Empleado e:misEmpleados){
-              e.setSueldo(5);
-          }          
-          for(Empleado e:misEmpleados){
-             System.out.println("Nombre: "+e.getNombre()+" Sueldo: "
-             +e.getSueldo()+" Fecha alta; "+e.getFechaContrato());
+          for(Empleado item:misEmpleados){
+              item.setSueldo(5);
+          }
+          
+          for(Empleado item:misEmpleados){
+             System.out.println("Nombre: "+item.getNombre()+" Sueldo: "
+             +item.getSueldo()+" Fecha alta; "+item.getFechaContrato());
           }
     }
     
@@ -33,6 +34,7 @@ class Empleado{
         this.sueldo=sue;
         GregorianCalendar calendario = new GregorianCalendar(agno, mes-1, dia);
         altaContrato = calendario.getTime();
+       
     }
     public Empleado(String nom){
         this(nom,30000,2000,01,01);
