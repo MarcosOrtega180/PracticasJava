@@ -3,7 +3,7 @@ package POO_28al46;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
-//las clases abstractas son las clases más básicas o superiores en el arbol de herencia (es padre)
+//las clases abstractas son las clases más básicas o superiores en el arbol de herencia (clases super-padre)
 public class Video4546AbstractClass {
 
     public static void main(String[] args) {
