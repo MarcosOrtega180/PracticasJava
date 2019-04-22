@@ -8,8 +8,11 @@ public class Video40HerenciaFurgoneta extends Video28Coche {
     private int plazas_extra;
 
     public Video40HerenciaFurgoneta(int plazas_extra, int capacidad_carga) {
-        //super ejecuta el constructro de la clase padre, 
+        //super ejecuta el constructro de la clase padre, esto permite darle
+        //un estado inicial a todas las propiedades previamente definidas en la
+        //clase padre
         super();
+        //aquí construimos las propiedades locales de esta clase
         this.capacidad_carga=capacidad_carga;
         this.plazas_extra=plazas_extra;       
     }
