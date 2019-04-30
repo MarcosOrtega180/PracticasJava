@@ -24,6 +24,9 @@ public class Video4546AbstractClass {
 
 }
 
+//una clase abstrac es una clase básica, que posee propiedades y métodos que 
+//pueden ser heredados para varias clases más. Esto se hace para crear patrones
+//de diseño. 
 abstract class Persona {
 
     private String nombre;
@@ -35,7 +38,11 @@ abstract class Persona {
     public String getNombre() {
         return nombre;
     }
-
+    //los métodos abstract solo se declaran, debido a que supone que
+    //necesariamente deben existeir a las clases que hereden de la clase persona
+    //pero el contenido de método puede ser diferente entre las diferentes
+    //clases que hereden de la clase, por ello están vacíos ya que se debe definir
+    //su contenído específico dentro de cada clase hijo que esté heredando.
     public abstract String getDescripcion();
 }
 

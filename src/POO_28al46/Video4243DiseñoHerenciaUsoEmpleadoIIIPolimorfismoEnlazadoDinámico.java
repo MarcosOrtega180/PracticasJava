@@ -3,7 +3,8 @@ package POO_28al46;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
-
+//si yo pongo final frente a una clase lo que hago es decir que ninguna otra clase
+//puede heredar de dicha clase. Lo mismo pasa con los métodos
 public class Video4243DiseñoHerenciaUsoEmpleadoIIIPolimorfismoEnlazadoDinámico {
 
     public static void main(String[] args) {
@@ -20,6 +21,12 @@ public class Video4243DiseñoHerenciaUsoEmpleadoIIIPolimorfismoEnlazadoDinámico
         //de la subclase siempre que el programa espere un objeto de la super clase.
         misEmpleados[4] = jefe; //jefe es una subclase y misEmpleados[4] espera a clase padre
         misEmpleados[5] = new Jefatura("María", 5500, 2011, 10, 27, "Ventas");
+        
+        //casting, esto solo puede funcionar si el ejemplar de clase responde a 
+        //la regla del ES UN?
+        Jefatura jefa_finanzas=(Jefatura) misEmpleados[5];
+        jefa_finanzas.setIncentivo(-50000000);
+        jefa_finanzas.setNombre("Juanita juanita juanita");
 
         misEmpleados[1].setSeccion("RRHH");
         for (Empleados42 e : misEmpleados) {
@@ -63,7 +70,7 @@ class Empleados42 {
     }
 
     public void setNombre(String nombre) {
-//        this.nombre=nombre;
+       this.nombre=nombre;
     }
 
     public String getDatos() {
@@ -88,6 +95,10 @@ class Empleados42 {
     public double getSueldo() {
         return this.sueldo;
     }
+//    Esto evita el @override de los métodos
+    //final public double getSueldo() {
+//        return this.sueldo;
+//    }
 
     public Date getFechaContrato() {
         return this.altaContrato;
@@ -102,7 +113,8 @@ class Empleados42 {
         return "El IdSiguiente es: " + IdSiguiente;
     }
     //final define una constante
-    private final String nombre;
+//    private final String nombre;
+    private String nombre;
     private String seccion;
     private double sueldo;
     private int agno;
