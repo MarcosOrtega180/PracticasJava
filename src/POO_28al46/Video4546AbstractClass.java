@@ -38,11 +38,13 @@ abstract class Persona {
     public String getNombre() {
         return nombre;
     }
-    //los métodos abstract solo se declaran, debido a que supone que
+    //los métodos abstract solo se definen pero no se contruyen, debido a que supone que
     //necesariamente deben existeir a las clases que hereden de la clase persona
     //pero el contenido de método puede ser diferente entre las diferentes
-    //clases que hereden de la clase, por ello están vacíos ya que se debe definir
+    //clases que heredan de la clase, por ello están vacíos ya que se debe definir
     //su contenído específico dentro de cada clase hijo que esté heredando.
+
+    // concepto: Una clase abstracta es la que marca el di diseño de la gerarquía de la erencia.
     public abstract String getDescripcion();
 }
 
