@@ -5,6 +5,11 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.Timer;
 import java.awt.Toolkit;
+//Pr qué serían necesarias?
+/*Para acceder a los campos privados de una clase desde otra clase.
+* Para ocultar una clase de otras pertenecientes al mismo paquete.
+* Para crear Clases internas "anónimas", muy útiles para gestionar eventos y retrollamadas.
+* Cuando solo una clase debe accer a los compos de ejemplar de clase.*/
 
 class PruevaTemporizador2V53 {
     public static void main(String[] args) {
@@ -31,7 +36,8 @@ class Reloj {
     private boolean sonido;
 
     /* la ventaja que tiene la clase interna es que puede acceder a las variables de la clase que la contiene de forma
-     * directa, esto permite trabajar sin contar con métodos de acceso (seters y geters).*/
+     * directa, esto permite trabajar sin contar con métodos de acceso (seters y geters), eso funciona por más que
+     * dichas variables sean private.*/
     private class DameLaHora2 implements ActionListener {
 
         @Override
