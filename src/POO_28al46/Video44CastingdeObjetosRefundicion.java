@@ -16,6 +16,7 @@ public class Video44CastingdeObjetosRefundicion {
 
     
     public static void main(String[] args) {
+
         Jefatura44 jefe = new Jefatura44("Carlos Pezzino", 1000, 10, 10, 10, "Jefatura44");
         jefe.setIncentivo(1000);
         Empleados44[] misEmpleados=new Empleados44[6];
@@ -25,10 +26,13 @@ public class Video44CastingdeObjetosRefundicion {
         misEmpleados[3]=new Empleados44("Marcos Ortega");
         misEmpleados[4]=jefe; //Polimorfismo en acción. Principio de sustitución
         misEmpleados[5]=new Jefatura44("María", 5500, 2011, 10, 27, "Ventas");
+
         //esto es un casting de objetos, esto tb se hace con tipos de variables primitivas
         Jefatura44 jefa_Finanzas=(Jefatura44) misEmpleados[5];
+
         jefa_Finanzas.setIncentivo(5000000);
         misEmpleados[1].setSeccion("RRHH");
+
         for(Empleados44 e:misEmpleados){
               e.setSueldo(5);
           }          

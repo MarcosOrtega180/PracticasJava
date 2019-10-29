@@ -5,7 +5,7 @@ import java.awt.*;
 /* 57 como colocar el frame en cualqueir punto de la pantalla, para ello usamos Tookit para comunicarnos con el sistema
  * nativo de las ventanas, usamos getDefaultTookit,
  * Toolkit.getDefaultToolkit(); retorna el sistema nativo en el que se está ejecutando el programa*/
-public class CreandoMarcoCentrado {
+public class CreandoMarcoCentradoV5657 {
     public static void main(String[] args){
         MarcoCentrado miMarco = new MarcoCentrado();
         miMarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

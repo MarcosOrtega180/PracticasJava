@@ -1,6 +1,6 @@
 package Video52_53_54_InterfacesYClasesInternas;
 /*Qué son?
- * Las clases internas loles son clases dentro de un método.
+ * Las clases internas locales son clases dentro de un método.
  *   Cuánndo se utilizan estos tipos de clases y por qué?
  *       Son útiles cuando solo se va a utilizar (instanciar) la clase interna una vez. El objetivo es simplicar aún más
  *       él código.
