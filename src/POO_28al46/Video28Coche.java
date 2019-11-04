@@ -8,7 +8,6 @@ public class Video28Coche {
     private int ancho;
     private int motor;//se especifíca la capacidad
     private int peso_plataforma;
-    private String peso="500";
     private String color;
     private int peso_total;
     private boolean asientosCuero, climatizador;
@@ -23,15 +22,16 @@ public class Video28Coche {
         
     }
     public String getMany(){
+        String peso = "500";
         return "La plataforma del ehículo tiene "+ruedas+" ruedas "
                 + ""+ ". Mide "+largo/1000+" metros con un ancho de "+
                 ancho+" cm y un peso de platafoma de "+ peso + " kg";
     }
-    public String getLargo(){
+    String getLargo(){
         return "El largo del coche es "+ largo;
     }
     
-    public void setColor(String colorIn){
+    void setColor(String colorIn){
         color=colorIn;      
     }
     public String getColor(){
