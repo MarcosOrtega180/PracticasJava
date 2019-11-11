@@ -17,6 +17,17 @@ Estado dos son las clases básicas
 ##Tipos
 
 
-#Clases adpatadoras
+#Clases adaptadoras
 Son clases utilizadas cuando hay demasiados metodos requeridos dentro de una interfaz, esta clase nos ayuda a 
 implementar solo aquellos métodos que en verdad necesitemos.
+
+#Listeners
+Existen varios tipos de listener dependiendo de cuales sean los eventos qeu querramos ir manejando, todos ellos en 
+en algún punto implementan la interfaz ActionListener.\
+Muchas de estas interfaces poseen sus métodos adaptadores para no tener que desarrollar necesariamente todos los métodos
+que se encuentren incluidos en ellas; entre estos listeners podemos encontrar.
+* KeyListener.
+* MouseListener.
+* WindowListener.
+* FocusListener.
+* WindowFocusListener.
