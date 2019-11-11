@@ -17,7 +17,7 @@ public class EventosVIIEventosDeTecladoIV71 {
 }
 
 class MarcoConTeclas extends JFrame{
-    public MarcoConTeclas(){
+    MarcoConTeclas(){
         setVisible(true);
         setBounds(700,300,600,450);
         //aquí creamos nuestro listener
@@ -27,7 +27,7 @@ class MarcoConTeclas extends JFrame{
 
 //construimos nuestro objeto keyListener
 class EventoDeTeclado implements KeyListener {
-    public EventoDeTeclado(){
+    EventoDeTeclado(){
         System.out.println();
     }
     @Override
