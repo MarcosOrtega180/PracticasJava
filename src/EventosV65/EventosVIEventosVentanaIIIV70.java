@@ -29,12 +29,12 @@ class CambioEstado implements WindowStateListener {
     //esto desencadena una acción cada vez que el estado de la ventana ha sido modificado
     @Override
     public void windowStateChanged(WindowEvent e) {
-        System.out.println("La ventana ha cambiado de estado");
+//        System.out.println("La ventana ha cambiado de estado");
         /*para ver el estado actual nosotros podemos consultar directametne las variables de lcase pertenecientes al
         windowEvent
          */
-        System.out.println("estado" + e.getNewState());
-        //ahora imprimimos algo cuando la ventana ha sido actualizada
+        System.out.println("estado: " + e.getNewState()+ "valor: "+ e.WINDOW_STATE_CHANGED);
+//        ahora imprimimos algo cuando la ventana ha sido actualizada
 //        if(e.getNewState()==6){
 //        esto es lo mismo que lo anterior
         if (e.getNewState() == Frame.MAXIMIZED_BOTH) {

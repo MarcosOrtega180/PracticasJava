@@ -11,7 +11,9 @@ import java.awt.event.FocusListener;
  * cualquier tipo de objeto con gui sobre el cual el foco se pueda posicionar*/
 public class EventosXEventosDeFocoV74 {
     public static void main(String[] args) {
+
         MarcoFoco miMarco = new MarcoFoco();
+        miMarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
 
@@ -45,12 +47,14 @@ class LaminaFoco extends JPanel {
     private class LanzaFocos implements FocusListener {
         @Override
         public void focusGained(FocusEvent e) {
+            cuadro1.setEnabled(true);
             System.out.println("Foco ganado");
         }
 
         @Override
         public void focusLost(FocusEvent e) {
             System.out.println("Foco perdido");
+
             String email = cuadro1.getText();
             boolean comprobacion = false;
             for (int i = 0; i < email.length(); i++) {
@@ -62,6 +66,7 @@ class LaminaFoco extends JPanel {
                 System.out.println("Correcto");;
             }else{
                 System.out.println("Incorrecto");
+                cuadro2.setEnabled(false);
             }
         }
     }

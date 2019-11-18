@@ -53,4 +53,7 @@ class M_VentanaII extends WindowAdapter {
         super.windowOpened(e);
         System.out.println("Ventana abirta");
     }
+
+
+
 }

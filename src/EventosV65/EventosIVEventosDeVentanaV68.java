@@ -30,8 +30,8 @@ class MarcoBotonesIII extends JFrame {
     MarcoBotonesIII() {
 
 //        LaminaBotonesII milamina = new LaminaBotonesII();
-        M_Ventana oyente = new M_Ventana();
-        addWindowListener(oyente);
+//        M_Ventana oyente = new M_Ventana();
+        addWindowListener(new M_Ventana());
     }
 }
 // en lugar de action listener, necesitamos un WindowLIstener

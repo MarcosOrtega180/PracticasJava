@@ -22,6 +22,7 @@ class MarcoBoton extends JFrame {
         //aquí creamos nuestro listener
         addMouseListener(new EventosDeRaton2());
         addMouseMotionListener(new EventosDeRaton2());
+        addMouseWheelListener(new EventosDeRaton2());
     }
 }
 
@@ -53,7 +54,7 @@ class EventosDeRaton implements MouseListener {
     }
 }
 
-class EventosDeRaton2 extends MouseAdapter implements MouseMotionListener {
+class EventosDeRaton2 extends MouseAdapter {
 //    @Override
 //    public void mouseClicked(MouseEvent e) {
 //        super.mouseClicked(e);
@@ -85,5 +86,11 @@ class EventosDeRaton2 extends MouseAdapter implements MouseMotionListener {
     public void mouseMoved(MouseEvent e) {
         super.mouseMoved(e);
         System.out.println("Estás moviendo el mouse"+"x:"+e.getX()+"y:"+e.getY());
+    }
+
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        super.mouseWheelMoved(e);
+        System.out.println("la ruedita se mueve");
     }
 }

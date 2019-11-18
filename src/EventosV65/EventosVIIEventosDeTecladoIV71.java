@@ -27,11 +27,12 @@ class MarcoConTeclas extends JFrame{
 
 //construimos nuestro objeto keyListener
 class EventoDeTeclado implements KeyListener {
-    EventoDeTeclado(){
-        System.out.println();
-    }
+//    EventoDeTeclado(){
+//        System.out.println();
+//    }
     @Override
     public void keyTyped(KeyEvent e) {
+
         System.out.println("Keytyped: "+ +e.getKeyCode()+" keyChar: "+e.getKeyChar());
     }
 
