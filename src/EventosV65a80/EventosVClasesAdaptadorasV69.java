@@ -1,9 +1,8 @@
-package EventosV65;
+package EventosV65a80;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 
 /*clase adaptadora, hay  ters tipos keyAdapter, WindowAdapter, MouseAdapter
  * WindowAdapter: tiene las siguientes interfaces WindowFocusListener, WindowStateListener, WindowListener (que ya usamos)
