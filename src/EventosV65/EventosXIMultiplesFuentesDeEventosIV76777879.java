@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
  * obs: Una abstract action básicamente busca ser capaz de actuar en respuesta a */
 
 
-public class EventosXIMultiplesFuentesDeEventosIV767778 {
+public class EventosXIMultiplesFuentesDeEventosIV76777879 {
     public static void main(String[] args) {
         MarcoAccion marco = new MarcoAccion();
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,12 +29,13 @@ class MarcoAccion extends JFrame {
     }
 }
 
+
 class PanelAction extends JPanel {
     PanelAction() {
         //las siguientes son acciones
-        AccionColor accionAmarillo = new AccionColor("Amarillo", new ImageIcon("src/favicon.ico"), Color.yellow);
-        AccionColor accionRojo = new AccionColor("Rojo", new ImageIcon("src/favicon.ico"), Color.red);
-        AccionColor accionAzul = new AccionColor("Azul", new ImageIcon("src/favicon.ico"), Color.blue);
+        AccionColor accionAmarillo = new AccionColor("Amarillo ", new ImageIcon("src/favicon.ico"), Color.yellow);
+        AccionColor accionRojo = new AccionColor("Rojo ", new ImageIcon("src/favicon.ico"), Color.red);
+        AccionColor accionAzul = new AccionColor("Azul ", new ImageIcon("src/favicon.ico"), Color.blue);
         //ahora creamos botones enviando como parámetros a las acciones creadas anteriormente
         add(new JButton(accionAmarillo));
         add(new JButton(accionRojo));
@@ -55,11 +56,14 @@ class PanelAction extends JPanel {
         mapaAccion.put("fondo_azul", accionAzul);
         mapaAccion.put("fondo_rojo", accionRojo);
     }
+
     private class AccionColor extends AbstractAction { //declaramos la clase con el modificador de acceso private para qeu no sea accesible desde otros lugares
         AccionColor(String nombre, Icon icono, Color color_boton) {
+            /*al tulizar putValue lo que estamos haciendo es definir variables de clase, igual a aquellas que estan precentes dentro de las diferentes librerías
+             * de java, para obtener los valores basta con poner NombreDeClase.getValue() */
             putValue(Action.NAME, nombre); //le ponemos un nombre a una acción
             putValue(Action.SMALL_ICON, icono); //le ponemos el icono
-            putValue(Action.SHORT_DESCRIPTION, "La lámina de color " + nombre); //le ponemos una descripción
+            putValue(Action.SHORT_DESCRIPTION, "La lámina es de color: " + nombre); //le ponemos una descripción
             putValue("color_de_fondo", color_boton); // yo mismo defino un nomre de clabe y le doy valor
         }
 
@@ -67,7 +71,7 @@ class PanelAction extends JPanel {
         public void actionPerformed(ActionEvent e) {
             Color c = (Color) getValue("color_de_fondo");
             setBackground(c); //esto es posible solo porque AccionColor es una clase interna
-            System.out.println("Nombre: "+getValue(Action.NAME)+" Descripción: "+getValue(Action.SHORT_DESCRIPTION));
+            System.out.println("Nombre: " + getValue(Action.NAME) + " Descripción: " + getValue(Action.SHORT_DESCRIPTION));
         }
     }
 }
