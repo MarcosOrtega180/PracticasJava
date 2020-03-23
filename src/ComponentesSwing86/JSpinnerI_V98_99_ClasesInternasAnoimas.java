@@ -31,16 +31,28 @@ class LaminaSpiner extends JPanel {
 //        String[] lista = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();?
 //        JSpinner control = new JSpinner(new SpinnerListModel(lista)); // crea un sopinner con los valore de la lista
 
-        JSpinner control = new JSpinner(new ModelJSpinner());
+//        JSpinner control = new JSpinner(new ModelJSpinner());
+        //clase interna anónima
+        JSpinner control = new JSpinner(new SpinnerNumberModel(5,0,10,1){
+            @Override
+            public Object getNextValue() {
+                return super.getPreviousValue();
+            }
+
+            @Override
+            public Object getPreviousValue() {
+                return super.getNextValue();
+            }
+        });
 
         Dimension d = new Dimension(200, 20);
         control.setPreferredSize(new Dimension(d));
         add(control);
     }
 
-    private class ModelJSpinner extends SpinnerNumberModel {
+   /* private class ModelJSpinner extends SpinnerNumberModel {
         ModelJSpinner() {
-            super(5, 0, 10, 1);
+            super(5, 0,     10, 1);
         }
 
         @Override
@@ -52,5 +64,5 @@ class LaminaSpiner extends JPanel {
         public Object getPreviousValue() {
             return super.getNextValue();
         }
-    }
+    }*/
 }
