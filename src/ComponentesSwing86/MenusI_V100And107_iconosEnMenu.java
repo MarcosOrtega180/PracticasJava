@@ -2,7 +2,7 @@ package ComponentesSwing86;
 
 import javax.swing.*;
 
-public class MenusI_V100 {
+public class MenusI_V100And107_iconosEnMenu {
     public static void main(String[] args) {
         MenuFrame mimarco = new MenuFrame();
         mimarco.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -26,10 +26,11 @@ class MenuLamina extends JPanel{
         JMenu herramientas = new JMenu("Herramientas");
         JMenu opciones = new JMenu("Opciones");
 
+
         JMenuItem guardar = new JMenuItem("Guardar");
         JMenuItem guardarComo = new JMenuItem("Guardar como");
 
-        JMenuItem  cortar= new JMenuItem("Cortar");
+        JMenuItem  cortar= new JMenuItem("Cortar", new ImageIcon("ComponentesSwing86/iconos/icons8_Cut_50px_1.png"));
         JMenuItem copiar = new JMenuItem("Copiar");
         JMenuItem pegar = new JMenuItem("Pegar");
 

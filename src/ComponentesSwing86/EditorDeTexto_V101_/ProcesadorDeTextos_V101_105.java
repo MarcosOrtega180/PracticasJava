@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ProcesadorDeTextos {
+public class ProcesadorDeTextos_V101_105 {
     public static void main(String[] args) {
-        MenuProcesador_II mimenu = new MenuProcesador_II();
+        MenuProcesador_III mimenu = new MenuProcesador_III();
         mimenu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }
@@ -15,7 +15,7 @@ public class ProcesadorDeTextos {
 class MenuProcesador_II extends JFrame {
     MenuProcesador_II() {
         setBounds(500, 300, 550, 400);
-        LaminaProceador_II milamina = new LaminaProceador_II();
+        LaminaProceador_III milamina = new LaminaProceador_III();
         add(milamina);
         setVisible(true);
     }
@@ -24,6 +24,7 @@ class MenuProcesador_II extends JFrame {
 class LaminaProceador_II extends JPanel {
     JTextPane miarea;
     JMenu fuente, estilo, tamagno;
+    Font letra;
 
     LaminaProceador_II() {
         setLayout(new BorderLayout());
@@ -38,7 +39,7 @@ class LaminaProceador_II extends JPanel {
 //        Gestionar_menus gestionamenus = new Gestionar_menus();
         //------------------------------------------------
 //        JMenuItem arial = new JMenuItem("Arial");
-//        JMenuItem courier = new JMenuItem("Courier");
+//        JMenuItem courier = new JMenuItem("Harrington");
 ////        courier.addActionListener(gestionamenus);
 //        JMenuItem verdana = new JMenuItem("Verdana");
 //        fuente.add(arial);
@@ -61,17 +62,17 @@ class LaminaProceador_II extends JPanel {
 //        tamagno.add(tam_20);
 //        tamagno.add(tam_24);
 //        //------------------------------------------------
-        configura_menu("Arial","fuente", "",1,1);
-        configura_menu("Courier","fuente", "",1,1);
-        configura_menu("Verdana","fuente", "",1,1);
+        configura_menu("Arial", "fuente", "Arial", 9, 10);
+        configura_menu("Harrington", "fuente", "Harrington", 9, 10);
+        configura_menu("Verdana", "fuente", "Verdana", 9, 10);
         //--------------------------------------------------
-        configura_menu("Negrita","estilo", "",1,1);
-        configura_menu("Cursiva","estilo", "",1,1);
+        configura_menu("Negrita", "estilo", "", Font.BOLD, 1);
+        configura_menu("Cursiva", "estilo", "", Font.ITALIC, 1);
         //------------------------------------------------
-        configura_menu("12","tamaño", "",1,1);
-        configura_menu("14","tamaño", "",1,1);
-        configura_menu("16","tamaño", "",1,1);
-        configura_menu("20","tamaño", "",1,1);
+        configura_menu("12", "tamaño", "", 1, 12);
+        configura_menu("14", "tamaño", "", 1, 14);
+        configura_menu("16", "tamaño", "", 1, 16);
+        configura_menu("20", "tamaño", "", 1, 20);
         //------------------------------------------------
         mibarra.add(fuente);
         mibarra.add(estilo);
@@ -80,19 +81,51 @@ class LaminaProceador_II extends JPanel {
         add(laminamenu, BorderLayout.NORTH);
 
 
-
         miarea = new JTextPane();
         add(miarea, BorderLayout.CENTER);
     }
 
-    public void configura_menu(String rotulo, String menu, String tipo_letra, int estilos, int tam){
+    public void configura_menu(String rotulo, String menu, String tipo_letra, int estilos, int tam) {
         JMenuItem elem_menu = new JMenuItem(rotulo);
-        if(menu.equals("fuente")){
+        if (menu.equals("fuente")) {
             fuente.add(elem_menu);
-        }else if(menu.equals("estilo")){
+        } else if (menu.equals("estilo")) {
             estilo.add(elem_menu);
-        }else if(menu.equals("tamaño")){
+        } else if (menu.equals("tamaño")) {
             tamagno.add(elem_menu);
+        }
+        elem_menu.addActionListener(new Gestiona_Eventos(tipo_letra, rotulo, estilos, tam));
+    }
+
+    private class Gestiona_Eventos implements ActionListener {
+        String tipo_letra, rotulo;
+        int estilos, tam;
+
+        Gestiona_Eventos(String tipo_letra, String rotulo, int estilos, int tam) {
+            this.tipo_letra = tipo_letra;
+            this.rotulo = rotulo;
+            this.estilos = estilos;
+            this.tam = tam;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            letra = miarea.getFont();
+            if (rotulo.equals("Arial") || rotulo.equals("Harrington") || rotulo.equals("Verdana")) {
+                estilos = letra.getStyle();
+                tam = letra.getSize();
+            } else if (rotulo.equals("Negrita") || rotulo.equals("Cursiva")) {
+                if (letra.getStyle() == Font.BOLD || letra.getStyle() == Font.ITALIC) {
+                    estilos = 3;
+                }
+                tipo_letra = letra.getFontName();
+                tam = letra.getSize();
+            } else if (rotulo.equals("12") || rotulo.equals("14") || rotulo.equals("16") || rotulo.equals("20")) {
+                estilos = letra.getStyle();
+                tipo_letra = letra.getFontName();
+            }
+            miarea.setFont(new Font(tipo_letra, estilos, tam));
+            System.out.println("tipo: " + tipo_letra + " estilo: " + estilos + " tamaño: " + tam);
         }
     }
 
@@ -104,7 +137,7 @@ class LaminaProceador_II extends JPanel {
 //
 //        @Override
 //        public void actionPerformed(ActionEvent e) {
-//            miarea.setFont(new Font("Courier", Font.PLAIN, 12));
+//            miarea.setFont(new Font("Harrington", Font.PLAIN, 12));
 //        }
 //    }
 }
