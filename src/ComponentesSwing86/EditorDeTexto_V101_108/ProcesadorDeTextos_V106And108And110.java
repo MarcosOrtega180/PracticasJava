@@ -1,17 +1,18 @@
-package ComponentesSwing86.EditorDeTexto_V101_;
+package ComponentesSwing86.EditorDeTexto_V101_108;
 
 import javax.swing.*;
 import javax.swing.text.StyledEditorKit;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 
-public class ProcesadorDeTextos_V106And108 {
+public class ProcesadorDeTextos_V106And108And110 {
     public static void main(String[] args) {
         MenuProcesador_III mimenu = new MenuProcesador_III();
         mimenu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -55,6 +56,7 @@ class LaminaProceador_III extends JPanel {
         /*Agrego check box para poder escoger negrita o cursiva*/
         JCheckBox negrita = new JCheckBox("Negrita");
         JCheckBox cursiva = new JCheckBox("Cursiva");
+        //video 110 accesos del teclado
         negrita.addActionListener(new StyledEditorKit.BoldAction());
         cursiva.addActionListener(new StyledEditorKit.ItalicAction());
         estilo2.add(negrita);
@@ -70,13 +72,13 @@ class LaminaProceador_III extends JPanel {
         JRadioButtonMenuItem btn14 = new JRadioButtonMenuItem("14");
         JRadioButtonMenuItem btn16 = new JRadioButtonMenuItem("16");
         JRadioButtonMenuItem btn20 = new JRadioButtonMenuItem("20");
+        //video 110 accesos del teclado
+//        btn20.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK));
         ButtonGroup tamagnoGroup = new ButtonGroup();
-
         tamagnoGroup.add(btn12);
         tamagnoGroup.add(btn14);
         tamagnoGroup.add(btn16);
         tamagnoGroup.add(btn20);
-
         btn12.addActionListener(new StyledEditorKit.FontSizeAction("tam", 12));
         btn14.addActionListener(new StyledEditorKit.FontSizeAction("tam", 14));
         btn16.addActionListener(new StyledEditorKit.FontSizeAction("tam", 16));
@@ -99,6 +101,19 @@ class LaminaProceador_III extends JPanel {
 
 
         miarea = new JTextPane();
+
+        JPopupMenu menuEmergente = new JPopupMenu();
+        JMenuItem negritaEmergente = new JMenuItem("Negrita");
+        JMenuItem cursivaEmergente = new JMenuItem("Cursiva");
+
+        negritaEmergente.addActionListener(new StyledEditorKit.BoldAction());
+        cursivaEmergente.addActionListener(new StyledEditorKit.ItalicAction());
+
+        menuEmergente.add(negritaEmergente);
+        menuEmergente.add(cursivaEmergente);
+
+        setComponentPopupMenu(menuEmergente);
+        miarea.setComponentPopupMenu(menuEmergente);
         add(miarea, BorderLayout.CENTER);
     }
 
@@ -112,7 +127,9 @@ class LaminaProceador_III extends JPanel {
             case "estilo":
                 if(estilos==Font.BOLD){
                     elem_menu.addActionListener(new StyledEditorKit.BoldAction());
+                    elem_menu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,InputEvent.CTRL_DOWN_MASK));
                 }else if(estilos==Font.ITALIC){
+                    elem_menu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,InputEvent.CTRL_DOWN_MASK));
                     elem_menu.addActionListener(new StyledEditorKit.ItalicAction());
                 }
                 estilo.add(elem_menu);
